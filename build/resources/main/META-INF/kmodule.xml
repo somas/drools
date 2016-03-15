@@ -4,8 +4,8 @@
     </kbase>
 
     <kbase name="TemplatesKB" packages="com.st.simple">
-        <ruleTemplate dtable="com/st/simple/ExampleCheese.xls"
-                      template="com/st/simple/Cheese.drt"
+        <ruleTemplate dtable="com/st/simple/InsurerRules.xls"
+                      template="com/st/simple/insurer_switch.drt"
                       row="2" col="2"/>
         <ksession name="TemplatesKS"/>
     </kbase>

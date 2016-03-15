@@ -1,0 +1,20 @@
+template header
+name
+jurisdiction
+insurer
+
+package com.st.simple;
+
+global java.util.List list;
+import com.st.simple.bean.Merchant;
+
+template "insurer_switch"
+
+rule "Insurer switch_@{row.rowNumber}"
+    when
+        Merchant(name == "@{name}")
+        Merchant(jurisdiction == "@{jurisdiction}")
+    then
+        list.add("@{insurer}");
+end
+end template
