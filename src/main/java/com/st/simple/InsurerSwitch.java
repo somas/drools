@@ -18,7 +18,6 @@ public class InsurerSwitch {
     public static void execute( KieContainer kc ) {
         KieSession ksession = kc.newKieSession( "TemplatesKS" );
 
-        //now create some test data
         ksession.insert( new Merchant( "Staples", "CO"));
 
         final List<String> list = new ArrayList<String>();

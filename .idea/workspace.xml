@@ -119,20 +119,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InsurerSwitch.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="InsurerSwitch.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/st/simple/InsurerSwitch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.5555553">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.36458334">
+              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="insurer_switch.drt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="insurer_switch.drt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/com/st/simple/insurer_switch.drt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6519685">
+            <state vertical-scroll-proportion="-15.333333">
               <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
               <folding />
             </state>
@@ -556,8 +556,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/com/st/simple/Cheese.drt" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/kmodule.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/st/simple/Merchant.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/st/simple/InsurerSwitch.java" />
         <option value="$PROJECT_DIR$/src/main/resources/com/st/simple/insurer_switch.drt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/st/simple/InsurerSwitch.java" />
       </list>
     </option>
   </component>
@@ -1342,16 +1342,16 @@
       <workItem from="1458061059871" duration="1623000" />
       <workItem from="1458069780587" duration="290000" />
       <workItem from="1458076605017" duration="211000" />
-      <workItem from="1458078037741" duration="4317000" />
+      <workItem from="1458078037741" duration="4361000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15328000" />
+    <option name="totallyTimeSpent" value="15372000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-519" y="-1057" width="1920" height="1057" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1362,8 +1362,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298351" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26517573" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32800853" sideWeight="0.4970015" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26517573" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32800853" sideWeight="0.4970015" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24866879" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19190405" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1790,18 +1790,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/st/simple/InsurerSwitch.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/st/simple/insurer_switch.drt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.5555553">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state vertical-scroll-proportion="-15.333333">
+          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/st/simple/insurer_switch.drt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/st/simple/InsurerSwitch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6519685">
-          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.36458334">
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
           <folding />
         </state>
       </provider>
