@@ -1,0 +1,12 @@
+<kmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://jboss.org/kie/6.0.0/kmodule">
+    <kbase name="HelloWorldKB" packages="com.st.simple">
+        <ksession name="HelloWorldKS"/>
+    </kbase>
+
+    <kbase name="TemplatesKB" packages="com.st.simple">
+        <ruleTemplate dtable="com/st/simple/ExampleCheese.xls"
+                      template="com/st/simple/Cheese.drt"
+                      row="2" col="2"/>
+        <ksession name="TemplatesKS"/>
+    </kbase>
+</kmodule>
