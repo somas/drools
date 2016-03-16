@@ -14,27 +14,17 @@
  * limitations under the License.
  */
 
-package com.st.simple
-import com.st.simple.HelloWorldExample.Message;
+package com.st.simple.insurer
+import com.st.simple.bean.Merchant;
+import com.st.simple.bean.Rules;
 
 global java.util.List list
 
-rule "Hello World"
-    dialect "mvel"
+rule "Insurer switch"
     when
-        m : Message( status == Message.HELLO, message : message )
+        Rules($insurer: insurer, $mn: merchantName, $mj: merchantJurisdiction)
+        Merchant(name == $mn)
+        Merchant(jurisdiction == $mj)
     then
-        System.out.println( message );
-//        modify ( m ) { setMessage( "Goodbyte cruel world" ),
-//                       setStatus( Message.GOODBYE ) };
-    modify ( m ) { message = "Goodbye cruel world",
-                   status = Message.GOODBYE };
-end
-
-rule "Good Bye"
-    dialect "java"
-    when
-        Message( status == Message.GOODBYE, message : message )
-    then
-        System.out.println( message );
+        list.add($insurer);
 end

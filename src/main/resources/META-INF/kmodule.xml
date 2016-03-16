@@ -9,4 +9,8 @@
                       row="2" col="2"/>
         <ksession name="TemplatesKS"/>
     </kbase>
+
+    <kbase name="InsurerSwitchKB" packages="com.st.simple.insurer">
+        <ksession name="InsurerSwitchKS"/>
+    </kbase>
 </kmodule>
