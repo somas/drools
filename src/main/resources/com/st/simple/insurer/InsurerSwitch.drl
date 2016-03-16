@@ -22,9 +22,10 @@ global java.util.List list
 
 rule "Insurer switch"
     when
-        Rules($insurer: insurer, $mn: merchantName, $mj: merchantJurisdiction)
-        Merchant(name == $mn)
-        Merchant(jurisdiction == $mj)
+        Rules($insurer: insurer, $mn: merchantName, $mj: merchantJurisdiction, $sd: startDate, $ed: endDate)
+        Merchant(name == $mn , jurisdiction == $mj, startDate >= $sd , endDate <= $ed)
     then
-        list.add($insurer);
+         System.out.println( "for combination: \n merchantName = " + $mn + " \n merchantJurisdiction = " + $mj
+         + " \n startDate = " + $sd + " \n endDate = " + $ed + " \n then Insurer = " + $insurer );
+         System.out.println("-------------------------");
 end

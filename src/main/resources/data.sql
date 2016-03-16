@@ -3,3 +3,4 @@ INSERT INTO rules(id, merchant_name, merchant_jurisdiction, insurer, start_date,
 INSERT INTO rules(id, merchant_name, merchant_jurisdiction, insurer, start_date, end_date) values ('3', 'Staples', 'CA', 'ACME', DATE '2016-01-02',DATE '2016-02-29');
 INSERT INTO rules(id, merchant_name, merchant_jurisdiction, insurer, start_date, end_date) values ('4', 'Staples', 'WA', 'STAR', DATE '2016-01-02',DATE '2016-02-29');
 INSERT INTO rules(id, merchant_name, merchant_jurisdiction, insurer, start_date, end_date) values ('5', 'Staples', 'OR', 'CNA', DATE '2016-01-02',DATE '2016-02-29');
+INSERT INTO rules(id, merchant_name, merchant_jurisdiction, insurer, start_date, end_date) values ('6', 'Staples', 'CO', 'STAR-2', DATE '2016-03-02',DATE '2016-05-29');

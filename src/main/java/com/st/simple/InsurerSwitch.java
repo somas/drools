@@ -14,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 @SpringBootApplication
@@ -39,19 +40,21 @@ public class InsurerSwitch {
     public static void execute( KieContainer kc, List<Rules> rules) {
         System.out.println("---------------- Running with db rules and DRL --------------");
         KieSession ksession = kc.newKieSession( "InsurerSwitchKS" );
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.MONTH, -2);
 
-        ksession.insert( new Merchant( "Staples", "CO"));
+        ksession.insert( new Merchant( "Staples", "CO", calendar.getTime(), calendar.getTime()));
+        ksession.insert( new Merchant( "Staples", "CA", calendar.getTime(), calendar.getTime()));
+        ksession.insert( new Merchant( "Staples", "WA", calendar.getTime(), calendar.getTime()));
+
+        calendar.add(Calendar.MONTH, 2);
+        ksession.insert( new Merchant( "Staples", "CO", calendar.getTime(), calendar.getTime()));
 
         for(Rules eachRule : rules) {
             ksession.insert(eachRule);
         }
 
-        final List<String> list = new ArrayList<String>();
-        ksession.setGlobal( "list", list );
-
         ksession.fireAllRules();
-
-        System.out.println(list);
 
         ksession.dispose();
     }
