@@ -40,12 +40,22 @@ public class InsurerSwitch {
     public static void execute( KieContainer kc, List<Rules> rules) {
         System.out.println("---------------- Running with db rules and DRL --------------");
         KieSession ksession = kc.newKieSession( "InsurerSwitchKS" );
+
+        addFactsToSession(rules, ksession);
+
+        ksession.fireAllRules();
+
+        ksession.dispose();
+    }
+
+    private static void addFactsToSession(List<Rules> rules, KieSession ksession) {
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.MONTH, -2);
 
         ksession.insert( new Merchant( "Staples", "CO", calendar.getTime(), calendar.getTime()));
         ksession.insert( new Merchant( "Staples", "CA", calendar.getTime(), calendar.getTime()));
         ksession.insert( new Merchant( "Staples", "WA", calendar.getTime(), calendar.getTime()));
+        ksession.insert( new Merchant( "Staples", "OR", calendar.getTime(), null));
 
         calendar.add(Calendar.MONTH, 2);
         ksession.insert( new Merchant( "Staples", "CO", calendar.getTime(), calendar.getTime()));
@@ -53,10 +63,6 @@ public class InsurerSwitch {
         for(Rules eachRule : rules) {
             ksession.insert(eachRule);
         }
-
-        ksession.fireAllRules();
-
-        ksession.dispose();
     }
 
     public static void execute( KieContainer kc) {

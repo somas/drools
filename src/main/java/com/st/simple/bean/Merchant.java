@@ -2,6 +2,7 @@ package com.st.simple.bean;
 
 import java.util.Date;
 
+
 public class Merchant {
     private String name;
     private String jurisdiction;
