@@ -7,17 +7,15 @@ public class Merchant {
     private String name;
     private String jurisdiction;
     private Date startDate;
-    private Date endDate;
 
     public Merchant(String name, String jurisdiction) {
         this.name = name;
         this.jurisdiction = jurisdiction;
     }
 
-    public Merchant(String name, String jurisdiction, Date startDate, Date endDate) {
+    public Merchant(String name, String jurisdiction, Date startDate) {
         this(name, jurisdiction);
         this.startDate = startDate;
-        this.endDate = endDate;
     }
 
     public String getName() {
@@ -44,11 +42,4 @@ public class Merchant {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
 }

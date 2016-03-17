@@ -15,7 +15,19 @@ public class Rules {
     private Date endDate;
 
     public Rules() {
+    }
 
+    public Rules(String id, String merchantName, String merchantJurisdiction, String insurer, Date startDate, Date endDate) {
+        this.id = id;
+        this.merchantName = merchantName;
+        this.merchantJurisdiction = merchantJurisdiction;
+        this.insurer = insurer;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
+    public static RulesBuilder builder() {
+        return new RulesBuilder();
     }
 
     public String getId() {
@@ -113,5 +125,55 @@ public class Rules {
 
     public String toString() {
         return "com.st.simple.bean.Rules(id=" + this.id + ", merchantName=" + this.merchantName + ", merchantJurisdiction=" + this.merchantJurisdiction + ", startDate=" + this.startDate + ", endDate=" + this.endDate + ")";
+    }
+
+    public static class RulesBuilder {
+        private String id;
+        private String merchantName;
+        private String merchantJurisdiction;
+        private String insurer;
+        private Date startDate;
+        private Date endDate;
+
+        RulesBuilder() {
+        }
+
+        public Rules.RulesBuilder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public Rules.RulesBuilder merchantName(String merchantName) {
+            this.merchantName = merchantName;
+            return this;
+        }
+
+        public Rules.RulesBuilder merchantJurisdiction(String merchantJurisdiction) {
+            this.merchantJurisdiction = merchantJurisdiction;
+            return this;
+        }
+
+        public Rules.RulesBuilder insurer(String insurer) {
+            this.insurer = insurer;
+            return this;
+        }
+
+        public Rules.RulesBuilder startDate(Date startDate) {
+            this.startDate = startDate;
+            return this;
+        }
+
+        public Rules.RulesBuilder endDate(Date endDate) {
+            this.endDate = endDate;
+            return this;
+        }
+
+        public Rules build() {
+            return new Rules(id, merchantName, merchantJurisdiction, insurer, startDate, endDate);
+        }
+
+        public String toString() {
+            return "com.st.simple.bean.Rules.RulesBuilder(id=" + this.id + ", merchantName=" + this.merchantName + ", merchantJurisdiction=" + this.merchantJurisdiction + ", insurer=" + this.insurer + ", startDate=" + this.startDate + ", endDate=" + this.endDate + ")";
+        }
     }
 }

@@ -6,6 +6,7 @@ import com.st.simple.service.RulesService;
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.orm.jpa.EntityScan;
@@ -26,46 +27,56 @@ public class InsurerSwitch {
     public static void main(String[] args) {
         ConfigurableApplicationContext configurableAppContext = SpringApplication.run(InsurerSwitch.class);
         KieContainer kc = KieServices.Factory.get().getKieClasspathContainer();
-        execute(kc, getRulesData(configurableAppContext));
-        execute(kc);
+        InsurerSwitch insurerSwitch = new InsurerSwitch();
+        insurerSwitch.execute(kc, insurerSwitch.getRulesData(configurableAppContext));
+        insurerSwitch.execute(kc);
     }
 
-    private static List<Rules> getRulesData(ConfigurableApplicationContext configurableAppContext) {
+    private List<Rules> getRulesData(ConfigurableApplicationContext configurableAppContext) {
         RulesService rulesService = (RulesService) configurableAppContext.getBean("rulesService");
         List<Rules> rules = rulesService.getRules();
         System.out.println(rules);
         return rules;
     }
 
-    public static void execute( KieContainer kc, List<Rules> rules) {
+    public void execute( KieContainer kc, List<Rules> rules) {
         System.out.println("---------------- Running with db rules and DRL --------------");
         KieSession ksession = kc.newKieSession( "InsurerSwitchKS" );
 
         addFactsToSession(rules, ksession);
 
+        fireRules(ksession);
+    }
+
+    protected List<String> fireRules(KieSession ksession) {
+        final List<String> list = new ArrayList<String>();
+        ksession.setGlobal( "list", list );
+
         ksession.fireAllRules();
 
         ksession.dispose();
+
+        return list;
     }
 
-    private static void addFactsToSession(List<Rules> rules, KieSession ksession) {
+    private void addFactsToSession(List<Rules> rules, KieSession ksession) {
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.MONTH, -2);
 
-        ksession.insert( new Merchant( "Staples", "CO", calendar.getTime(), calendar.getTime()));
-        ksession.insert( new Merchant( "Staples", "CA", calendar.getTime(), calendar.getTime()));
-        ksession.insert( new Merchant( "Staples", "WA", calendar.getTime(), calendar.getTime()));
-        ksession.insert( new Merchant( "Staples", "OR", calendar.getTime(), null));
+        ksession.insert( new Merchant( "Staples", "CO", calendar.getTime()));
+        ksession.insert( new Merchant( "Staples", "CA", calendar.getTime()));
+        ksession.insert( new Merchant( "Staples", "WA", calendar.getTime()));
+        ksession.insert( new Merchant( "Staples", "OR", calendar.getTime()));
 
         calendar.add(Calendar.MONTH, 2);
-        ksession.insert( new Merchant( "Staples", "CO", calendar.getTime(), calendar.getTime()));
+        ksession.insert( new Merchant( "Staples", "CO", calendar.getTime()));
 
         for(Rules eachRule : rules) {
             ksession.insert(eachRule);
         }
     }
 
-    public static void execute( KieContainer kc) {
+    public void execute( KieContainer kc) {
         System.out.println("---------------- Running with decision table / rules template --------------");
         KieSession ksession = kc.newKieSession( "TemplatesKS" );
 
